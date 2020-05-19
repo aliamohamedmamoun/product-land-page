@@ -2,12 +2,36 @@ import React from "react";
 import "./App.css";
 import Header from "./Components/Header";
 import Form from "./Components/Form";
-import Features from "./Components/Features";
+import Feature from "./Components/Feature";
 import Products from "./Components/Products";
 import Footer from "./Components/Footer";
 //import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends React.Component {
+  state = {
+    featuresData: [
+      {
+        icon: "fas fa-fire",
+        header: "Premium Materials",
+        parag:
+          "Our trombones use the shiniest brass which is sourced locally.This will increase the longevity of your purchase"
+      },
+      {
+        icon: "fas fa-truck",
+        header: "Fast Shipping",
+        parag:
+          "We make sure you recieve your trombones as soon as we have finishied making it.We also provide free returns if you are not satisfied."
+      },
+
+      {
+        icon: "fas fa-battery-full",
+        header: "Quality Assurance",
+        parag:
+          "For every purchase you make,we will ensure there are no damages or faults and we will check and test the pitch of your instrument."
+      }
+    ]
+  };
+
   render() {
     return (
       <div>
@@ -18,21 +42,13 @@ class App extends React.Component {
           </h2>
           <Form />
           <div id="features">
-            <Features
-              icon="&#xf0d1;"
-              header="Fast Shipping"
-              parag="We make sure you recieve your trombones as soon as we have finishied making it.We also provide free returns if you are not satisfied."
-            />
-            <Features
-              icon="&#xf06d;"
-              header="Premium Materials"
-              parag="Our trombones use the shiniest brass which is sourced locally.This will increase the longevity of your purchase"
-            />
-            <Features
-              icon="&#xf240;"
-              header="Quality Assurance"
-              parag="For every purchase you make,we will ensure there are no damages or faults and we will check and test the pitch of your instrument."
-            />
+            {this.state.featuresData.map(feature => (
+              <Feature
+                icon={feature.icon}
+                header={feature.header}
+                parag={feature.parag}
+              />
+            ))}
           </div>
           <iframe
             id="video"

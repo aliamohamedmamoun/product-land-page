@@ -75,13 +75,11 @@ li a {
   cursor: pointer;
 }
 #features {
-  display: flex;
-  flex-direction: column;
-  /*
+  display: grid;
   grid-gap: 10px;
   justify-content: start;
   margin-bottom: 60px;
-  margin-left: 80px;*/
+  margin-left: 80px;
 }
 
 #features > div {

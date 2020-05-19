@@ -1,10 +1,12 @@
 import React from "react";
-const Features = props => {
+//import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+const Feature = props => {
   return (
     // props.featuresData.map(data => (
+    // <i className="fa">{props.icon}</i>
     <div>
       <div id="icon">
-        <i className="fa">{props.icon}</i>
+        <i class={props.icon}></i>
       </div>
       <div id="txt">
         <h2>{props.header}</h2>
@@ -14,4 +16,4 @@ const Features = props => {
   );
 };
 
-export default Features;
+export default Feature;
